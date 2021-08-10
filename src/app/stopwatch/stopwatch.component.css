@@ -1,0 +1,33 @@
+.container {
+    width: 100vw;
+    margin: 0;
+    height: 100vh;
+    background-color: rgb(232, 178, 51);
+}
+h1 {
+    text-align: center;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 4em;
+}
+#time {
+    margin-top: 7%;
+    color: white;
+    font-size: 6em;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+.button-div {
+    width: 75%;
+    margin: 5% auto 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+.btn {
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 18px 10px;
+    width: 18.4%;
+    font-size: 1.25em;
+    
+}
