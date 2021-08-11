@@ -1,10 +1,10 @@
 <div class="container">
     <h1>JAVASCRIPT STOPWATCH</h1>
     <div id="timer-div">
-        <h3 id="time">{{ minutes | timer}}:{{ seconds | timer}}</h3>
+        <h3 id="time">{{ hours | timer }}:{{ minutes | timer}}:{{ seconds | timer}}</h3>
     <div class="button-div">
         <button class="btn btn-success" (click)="startTimer()" [disabled]="started">Start</button>
-        <button class="btn btn-danger" (click)="stopTimer()" [disabled]="!started">Stop</button>
+        <button class="btn btn-danger" (click)="pauseTimer()" [disabled]="!started">Pause</button>
         <button class="btn btn-primary" (click)="resetTimer()" [disabled]="!canReset">Reset</button>
     </div>
 </div>

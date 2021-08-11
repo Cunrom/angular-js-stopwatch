@@ -9,8 +9,9 @@ export class StopwatchComponent implements OnInit {
   myInterval;
   started = false;
   canReset = false;
-  seconds = 0;
+  hours = 0;
   minutes = 0;
+  seconds = 0;
   clockTick = new Audio('../../assets/audio/clock-tick.mp3');
   mouseClick = new Audio('../../assets/audio/mouse-click.mp3');
   constructor() { }
@@ -23,21 +24,29 @@ export class StopwatchComponent implements OnInit {
     this.started = true;
     setTimeout(() => {
       this.canReset = true;
-    }, 1000);
+    }, 100);
     this.myInterval = setInterval(() => {
       this.seconds += 1;
       this.clockTick.play();
       if (this.seconds === 60) {
-        this.seconds = 0;
         this.minutes += 1;
+        this.seconds = 0;
       }
       if (this.minutes === 60) {
+        this.hours += 1;
         this.minutes = 0;
-        this.seconds = 0;
+      }
+      if (this.hours === 24) {
+        this.hours = 0;
+        this.minutes = 0;
+        this.seconds =0;
+        clearInterval(this.myInterval);
+        this.started = false;
+        this.canReset = false;
       }
     }, 1000);
   }
-  stopTimer() {
+  pauseTimer() {
     this.mouseClick.play();
     this.started = false;
     clearInterval(this.myInterval);
